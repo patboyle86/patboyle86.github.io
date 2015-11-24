@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ## for client-side less
+  <link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+  -->
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Patrick Boyle">
+  <meta name="description" content="Posts and writings by Patrick Boyle">
+
+
+<meta name="keywords" content="python">
+
+  <title>
+    Patrick Boyle
+&ndash; Creating a wordcloud from Facebook posts  </title>
+
+</head>
+
+<body>
+  <aside>
+    <div id="user_meta">
+      <a href="">
+        <img src="/theme/images/logo.png" alt="logo">
+      </a>
+      <h2><a href="">Patrick Boyle</a></h2>
+      <p></p>
+      <ul>
+        <li><a href="http://www.patboyle.me/" target="_blank">Blog</a></li>
+        <li><a href="https://github.com/patboyle86" target="_blank">Github</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <p>
+      <a href="">Index</a> &brvbar; <a href="/archives.html">Archives</a>
+      </p>
+    </header>
+
+<article>
+  <div class="article_title">
+    <h3><a href="/facebook-wordcloud.html">Creating a wordcloud from Facebook posts</a></h3>
+  </div>
+  <div class="article_text">
+    <h1>Creating a wordcloud from Facebook posts</h1>
+<p>Recently people on Facebook have been posting wordclouds of their posts using a FB app. I thought this was cool, but I didn't really want to give an unknown app access to all my Facebook data. I'm in the process of learning python, so I thought it would be a fun project to try to do this in python.</p>
+<p>The full code is located <a href="https://github.com/patboyle86/projects/blob/master/FBWallPosts.ipynb">here</a> for those who are interested, but I'll show the results below.</p>
+<h2>All posts</h2>
+<p>Here is the wordcloud for all posts on my page.
+<img alt="All Posts" src="/images/allposts.png" /></p>
+<p>Obviously there are a lot of happy birthday posts, my name, beer, etc. What about just my posts?</p>
+<h2>My posts</h2>
+<p><img alt="My Posts" src="/images/myposts.png" /></p>
+<p>This is kinda strange...why is "New" so frequent? After digging around the text for a bit I found that I wrote "New Haven" a lot. I decided to replace "New Haven" with "NewHaven" to get around this and made a new wordcloud.</p>
+<p><img alt="My Posts" src="/images/myposts2.png" /></p>
+<p>Ok hmm, I guess I use the work "now" a lot...</p>
+<p>What about just other people's posts on my wall?</p>
+<h2>Other posts</h2>
+<p><img alt="Other Posts" src="/images/otherposts.png" /></p>
+<p>Well, well, well...looks like the main reason people post on my wall is to wish me happy birthday. I'll combine "Happy Birthday" and "Happy birthday" into "HappyBirthday" to see what that does.</p>
+<p><img alt="Other Posts" src="/images/otherposts2.png" /></p>
+<p>So that evens things out a bit. Still lots of birthday wishes. I bet this would show up in the post dates as well.</p>
+<h2>Posts over time</h2>
+<p>Here are the number of posts per month for me and everyone else.
+<img alt="My Posts per month" src="/images/mypostsvstime.png" /><img alt="Other Posts per month" src="/images/otherpostsvstime.png" /></p>
+<p>Oh, will ya look at that...seems like October is a popular month ;-)</p>
+<p>Now I want to see post frequency over time.
+<img alt="Posts vs Time" src="/images/allpostsvstime.png" /></p>
+<p>Seems like I peaked in late 2011.</p>
+<h2>Summary</h2>
+<p>This was a cool little project. There's other things I could do, like make a wordcloud for each year to see the change, filter just for swear words to see my favorites, but this is good for now. Hope you enjoyed it too!</p>
+  </div>
+  <div class="article_meta">
+    <p>Posted on: Sun 22 November 2015</p>
+    <p>Category: <a href="/category/python.html">Python</a>
+ &ndash; Tags:
+      <a href="/tag/python.html">python</a>    </p>
+  </div>
+
+
+</article>
+
+
+    <div id="ending_message">
+      <p>&copy; Patrick Boyle. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme by Giulio Fidente on <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">github</a>. </p>
+    </div>
+  </main>
+</body>
+</html>
