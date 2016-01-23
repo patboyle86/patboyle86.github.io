@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ## for client-side less
+  <link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+  -->
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Patrick Boyle">
+  <meta name="description" content="Posts and writings by Patrick Boyle">
+
+
+<meta name="keywords" content="python, pelican">
+
+  <title>
+    Patrick Boyle
+&ndash; How to update a Pelican site on GitHub pages  </title>
+
+</head>
+
+<body>
+  <aside>
+    <div id="user_meta">
+      <a href="">
+        <img src="/images/logo.png" alt="logo">
+      </a>
+      <h2><a href="">Patrick Boyle</a></h2>
+      <p></p>
+      <ul>
+        <li><a href="http://www.patboyle.me/" target="_blank">Blog</a></li>
+        <li><a href="https://github.com/patboyle86" target="_blank">Github</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <p>
+      <a href="">Index</a> &brvbar; <a href="/archives.html">Archives</a>
+      </p>
+    </header>
+
+<article>
+  <div class="article_title">
+    <h3><a href="/update-pelican-site.html">How to update a Pelican site on GitHub pages</a></h3>
+  </div>
+  <div class="article_text">
+    <h1>How to update a pelican site on GitHub pages</h1>
+<p>These are the steps I use to update and push changes to this website using Pelican and GitHub pages. I'm pretty new to this so it may not be the best way, but this seems to work for me. The info here was gathered from these sources:</p>
+<ul>
+<li>The Pelican <a href="http://docs.getpelican.com/en/3.6.3/index.html">docs</a></li>
+<li>This very useful <a href="http://ntanjerome.org/blog/how-to-setup-github-user-page-with-pelican/">post</a></li>
+<li>The page for the theme I'm using, <a href="https://github.com/gfidente/pelican-svbhack">pelican-svbhack</a></li>
+</ul>
+<h2>1. Enter correct python environment and navigate to  the github folder</h2>
+<p>It's recommended to use a dedicated python environment for the pelican site to ensure all the dependencies are correct. I named my environment 'pelican'.</p>
+<p>List environments</p>
+<div class="highlight"><pre>conda env list
+</pre></div>
+
+
+<p>Activate pelican environment</p>
+<div class="highlight"><pre><span class="nb">source </span>activate pelican
+</pre></div>
+
+
+<p>Change directory to github folder</p>
+<div class="highlight"><pre><span class="nb">cd</span> /media/pat/storage/GitHub/patboyle86.github.io/
+</pre></div>
+
+
+<h2>2. Check out source branch</h2>
+<p>Following the example <a href="http://ntanjerome.org/blog/how-to-setup-github-user-page-with-pelican/">here</a>, I make all the site changes in the source branch then push the output to the master branch.</p>
+<div class="highlight"><pre>git checkout <span class="nb">source</span>
+</pre></div>
+
+
+<h2>3. Make changes</h2>
+<p>Make the desired changes to the site.</p>
+<h2>4. Build site</h2>
+<p>I'm using Fabric so these are the commands to build the site and preview it locally</p>
+<div class="highlight"><pre>fab build
+fab serve
+</pre></div>
+
+
+<p>If everything looks right, then commit the changes.</p>
+<h2>5. Commit changes</h2>
+<p>Try to commit only one thing at a time.</p>
+<div class="highlight"><pre>git add .
+git commit -m <span class="s2">&quot;commit message&quot;</span>
+</pre></div>
+
+
+<p>Repeat steps 3 - 5 for the changes you want to make, then push the changes to GitHub.</p>
+<h2>6. Push changes</h2>
+<p>These steps are directly from <a href="http://ntanjerome.org/blog/how-to-setup-github-user-page-with-pelican/">here</a>. When I do the merge a message pops up to describe why the merge is necessary...I usually just continue and it seems to work.</p>
+<div class="highlight"><pre>ghp-import output
+git checkout master
+git merge gh-pages
+git push --all
+</pre></div>
+
+
+<h2>Done!</h2>
+<p>The changes will show up on the website now.</p>
+  </div>
+  <div class="article_meta">
+    <p>Posted on: Sat 23 January 2016</p>
+    <p>Category: <a href="/category/python-pelican.html">Python, Pelican</a>
+ &ndash; Tags:
+      <a href="/tag/python.html">python</a>,      <a href="/tag/pelican.html">pelican</a>    </p>
+  </div>
+
+
+</article>
+
+
+    <div id="ending_message">
+      <p>&copy; Patrick Boyle. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme by Giulio Fidente on <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">github</a>. </p>
+    </div>
+  </main>
+</body>
+</html>
